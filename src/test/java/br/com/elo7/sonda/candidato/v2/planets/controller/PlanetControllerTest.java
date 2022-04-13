@@ -101,16 +101,6 @@ public class PlanetControllerTest {
 
     @Test
     @Order(8)
-    public void should_remove_planet_from_id_2() throws Exception {
-        mockMvc
-            .perform(delete("/planets/{id}", 2L))
-            .andExpect(status().isOk())
-            .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON_VALUE))
-            .andExpect( content().string("2"));
-    }
-
-    @Test
-    @Order(9)
     public void should_update_planet_with_id_3() throws Exception {
         String jsonRequest = "{\"id\": 3, \"name\" : \"Mazalar\", \"width\":1200, \"height\":1200}";
         mockMvc

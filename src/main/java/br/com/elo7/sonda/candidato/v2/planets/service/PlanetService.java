@@ -25,8 +25,6 @@ public class PlanetService {
         return repository.save(planet);
     }
 
-    public void remove(Long id) {repository.deleteById(id);}
-
     public PlanetDTO update(PlanetDTO planet) {
 
         PlanetDTO oldPlanet = this.findOne(planet.getId());

@@ -41,12 +41,6 @@ public class PlanetController {
         return ResponseEntity.ok(assembler.toModel(service.save(planet)));
     }
 
-    @DeleteMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Long> remove(@PathVariable Long id) {
-        service.remove(id);
-        return new ResponseEntity<>(id, HttpStatus.OK);
-    }
-
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<PlanetRepresentation> update(@RequestBody PlanetRepresentation planetRepresentation) {
         validation(planetRepresentation);
